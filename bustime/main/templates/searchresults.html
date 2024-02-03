@@ -1,0 +1,52 @@
+{% load static %}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="{% static 'css/main.css' %}">
+</head>
+<body>
+
+<div class="go">
+    <form method="get" action="{% url 'go_back' %}">
+         <button type="submit">Back</button>
+     </form>
+</div>
+  
+{% block content %}
+
+<div class="toru">
+  <h1>Search Results</h1>
+
+  <p>Stop Name: {{ query }}</p>
+
+        {% if results %}
+        <div class="resu">
+        {% for result in results %}
+                  <div class="gust">
+                    <strong>Stop Name:</strong> {{ result.stopname }}
+                    <strong>Stop Time:</strong> {{ result.stoptime }}
+                    <strong>Bus Name:</strong> 
+                    {% if result.brname__bname %}
+                      <a href="{% url 'bus_detail' result.brname %}" class="res">
+                        {{ result.brname__bname }}
+                      </a>
+                    {% endif %}
+                    <strong>Route Name:</strong> {{ result.routename__route }}
+                  </div>
+            {% endfor %}
+        </div>
+        {% else %}
+          <p>No results found.</p>
+        {% endif %}
+        </div>
+        
+{% endblock %}
+
+</body>
+</html>

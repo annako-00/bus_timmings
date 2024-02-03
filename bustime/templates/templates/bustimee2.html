@@ -1,0 +1,38 @@
+{% extends 'bustimesee.html' %}
+
+
+{% block con1 %}
+          <tr>
+
+               <th>Bus Name</th>
+               <th>Bus Number</th>
+               <th>Bio</th>
+               <th>Start Stopname</th>
+               <th>Start Stoptime</th>
+               <th>Area</th>
+               <th>Stoptime</th>
+               <th>Area</th>
+               <th>Stoptime</th>
+               <th>Area</th>
+               <th>Stoptime</th>
+               <th>Area</th>
+               <th>Stoptime</th>
+               <th>Area</th>
+               <th>Stoptime</th>
+               <th>Area</th>
+               <th>Stoptime</th>
+
+          </tr>
+          <tr>
+               {% for d in bu %}
+
+                         <td>{{d.bno}}</td>
+                         <td>{{d.bname}}</td>
+                         <td>{{d.username}}</td>
+                         <td>{{d.ststopname}}</td>
+
+               {% endfor %}
+          </tr>
+
+{% endblock %}     
+

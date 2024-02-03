@@ -1,0 +1,58 @@
+{% load static %}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+     <link rel="stylesheet" href="{% static 'css/main.css' %}">
+
+</head>
+{% include 'head.html' %}
+<body>
+
+     
+          <div class="hund">
+
+               <div class="kg">
+                    {% block con %}
+                    {% endblock %}
+               </div>
+
+               <div class="lkg">
+                    {% block content1 %}
+                    {% endblock %}
+               </div>
+               
+               <div class="fin">
+                    <div class="ll">
+                         {% block content2 %}
+                         {% endblock %}
+                    </div>
+          
+                    <div class="ll">
+                         {% block content3 %}
+                         {% endblock %}
+                    </div>
+               </div>
+     
+               <div class="ire">
+                    <div class="ll">
+                         {% block content4 %}
+                         {% endblock %}
+                    </div>
+          
+                    <div class="mx">
+                         {% block content5 %}
+                         {% endblock %}
+                    </div>
+               </div>
+          
+     
+          </div>
+</body>
+{% include 'footer.html' %}
+</html>

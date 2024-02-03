@@ -1,0 +1,46 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Example</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+</head>
+<body>
+    <h1>Search Results</h1>
+    <form method="get" action="{% url 'search' %}">
+        <input type="text" name="q" value="{{ query }}">
+        <button type="submit">Search</button>
+    </form>
+
+    {% if articles %}
+        <ul>
+            {% for article in articles %}
+                <li>
+                    {% if q.article.ststopname %}
+                    <strong>Start Stop Name:</strong> {{ article.ststopname }}<br>hell
+                    {% endif %}
+
+                        <strong>Bus Name:</strong> {{ article.bname }}<br>
+                        <strong>Start Stop Name:</strong> {{ article.ststopname }}<br>
+                        <strong>Stop 2 Name:</strong> {{ article.stop2name }}<br>
+                        <strong>Stop 3 Name:</strong> {{ article.stop3name }}<br>
+                        <strong>Stop 3 Time:</strong> {{ article.stop3time }}<br>
+                        <strong>Stop 4 Name:</strong> {{ article.stop4name }}<br>
+                        <strong>Stop 4 Time:</strong> {{ article.stop4time }}<br>
+                        <strong>Stop 5 Name:</strong> {{ article.stop5name }}<br>
+                        <strong>Stop 5 Time:</strong> {{ article.stop5time }}<br>
+                        <strong>Stop 6 Name:</strong> {{ article.stop6name }}<br>
+                        <strong>Stop 6 Time:</strong> {{ article.stop6time }}<br>
+                        <strong>End Stop Name:</strong> {{ article.endstopname }}<br>
+                        <strong>End Stop Time:</strong> {{ article.endstoptime }}<br>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No results found.</p>
+    {% endif %}
+
+</body>
+</html>

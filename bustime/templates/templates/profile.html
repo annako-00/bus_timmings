@@ -1,0 +1,38 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+     <link rel="stylesheet" href="{% static 'css/main.css' %}">
+
+</head>
+<body>
+     <div class="go">
+          <form method="get" action="{% url 'back' %}">
+               <button type="submit">Back</button>
+           </form>
+     </div>
+     <div class="haku">
+          <table class="ash">
+               <tr>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Action</th>
+               </tr>
+               {% for k in u %}
+                    <tr>
+                         <td>{{k.username}}</td>
+                         <td>{{k.email}}</td>
+                         <td><a href="{% url 'aedit' k.id  %}" class="ed"><p>EDIT</p></a>
+                              <a href="{% url 'adelete' k.id  %}" class="ed"><p>DELETE</p></a>
+                         </td>
+                    </tr>
+               {% endfor %}
+          </table>
+     </div>
+</body>
+</html>

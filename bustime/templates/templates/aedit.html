@@ -1,0 +1,30 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+     <link rel="stylesheet" href="{% static 'css/main.css' %}">
+
+</head>
+<body>
+     <div class="go">
+          <form method="get" action="{% url 'back' %}">
+               <button type="submit">Back</button>
+           </form>
+     </div>
+     <div class="rpm">
+          <form method="post">
+               {% csrf_token %}
+               <div class="cena">
+                    {% csrf_token %}
+                    {{f}}
+                    <input type="submit" value="add" class="ck">
+               </div>
+          </form>
+     </div>
+</body>
+</html>
