@@ -1,0 +1,85 @@
+{% load static %}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="{% static 'css/main.css' %}">
+
+  </head>
+
+<body class="regbody">
+  
+
+  <div class="fc">
+        <form class="row g-3" method="post">
+        {% csrf_token %}
+          
+          <div class="cd">
+            <div class="uk">
+
+              <div class="mk">
+
+                <div class="co6">
+                  <label for="inputEmail" class="form-label">Email</label>
+                  {{form.email}}
+                </div>
+                
+                <div class="md6">
+                  <label for="inputName" class="form-label">Username </label>
+                  {{form.username}}
+                </div>
+              </div>
+  
+              <div class="mkd">
+                
+                <div class="col12">
+                  <label for="inputFname" class="form-label">First name</label>
+                  {{form.first_name}}
+                </div>
+    
+                <div class="col2">
+                  <label for="inputlname" class="form-label">Last Name</label>
+                  {{form.last_name}}
+                </div>
+              </div>
+  
+              <div class="mk">
+                
+                <div class="colm">
+                  <label for="inputPassword" class="form-label">Password</label>
+                  {{form.password1}}  
+                </div>
+   
+                <div class="col-12">
+                  <label for="inputPassword" class="form-label">Confirm Password</label>
+                  {{form.password2}}  
+                </div>
+  
+              </div>
+  
+            </div>
+
+            {{form.errors }} 
+
+            <div class="coo">
+              <button type="submit" class="btn btn-primary" class="cor">register</button>
+         </div>
+
+          </div>
+          {% if messages %}
+          <ul class="messages">
+              {% for message in messages %}
+                  <li>{{ message }}</li>
+              {% endfor %}
+          </ul>
+          {% endif %}
+    </form>
+  </div>
+  
+</body>
+</html>

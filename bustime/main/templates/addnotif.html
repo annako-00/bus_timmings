@@ -1,0 +1,34 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+     <link rel="stylesheet" href="{% static 'css/main.css' %}">
+</head>
+<body>
+     <div class="add">
+          <form method="post">
+               {% csrf_token %}
+               
+               <div class="main">
+                    {{ o }}
+                    {{ form.errors }} 
+                    <div class="coo">
+                         <button type="submit" class="btn btn-primary cor">Add</button>
+                    </div>
+
+                    {% if messages %}
+                         <ul class="messages">
+                              {% for message in messages %}
+                                   <li>{{ message }}</li>
+                              {% endfor %}
+                         </ul>
+                    {% endif %}
+               </div>
+          </form>
+     </div>
+</body>
+</html>

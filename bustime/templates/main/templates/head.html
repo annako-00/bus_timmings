@@ -1,0 +1,42 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Travel Web App</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    
+</head>
+<body>
+
+    
+
+    <div class="mok">
+    
+     
+     <nav>
+
+        <div class="logo">
+            <img src="../static/img/WhatsApp Image 2024-01-08 at 11.29.51 PM.jpeg">
+        </div>
+          
+        <div class="my">
+            <a href="{% url 'notif' %}">New Notifications</a>
+            <a href="{% url 'busli' %}"><p>Bus</p></a>
+            <a href="{% url 'login' %}"><p>login</p></a>
+            <a href="{% url 'register' %}"><p>Register</p></a>
+        </div>
+
+        
+          
+      </nav>
+    </div>
+
+    
+
+    
+
+</body>
+</html>
