@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block con %}
+<div class="box">
+    <form method="get" action="{% url 'search' %}">
+        <div class="gon">
+            <div class="but">
+                <input type="search" name="q" value="{{ query }}" placeholder="Search Here , eg : Arakunnam" autocomplete="off" class="search">
+                <button type="submit" class="bu">Search</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+{% endblock %}
+
+{% block content1 %}
+    <img src="../static/img/126054-anime-artwork-buses-vehicle-outdoors-anime-girls.jpg">
+{% endblock %}
+
+
+
+{% block content2 %}
+    <img src="../static/img/bus3.jpg">
+{% endblock %}
+
+{% block content3 %}
+    <h2>Making Your Daily Traveling Easy</h2>
+    <p>To be always be updated on about your bus </p></a>
+{% endblock %}
+
+{% block content4 %}
+    <div>
+        <a href="{% url 'busli' %}"><h2>Bus Timmings</h2>
+            <p>Here you can see all the bus timmings </p></a>
+    </div>
+{% endblock %}
+
+{% block content5 %}
+<img src="../static/img/1402444-bus-anime-girl-anime-artist-artwork-digital-art.jpg">
+{% endblock %}

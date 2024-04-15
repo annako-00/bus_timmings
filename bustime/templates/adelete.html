@@ -1,0 +1,7 @@
+<p>Are you sure you want to delete</p>
+<form method="POST">
+     {% csrf_token%}
+     
+     <input type="submit" value="yes"> 
+     <button><a href="{% url 'profile'%}">No</a></button>
+</form>

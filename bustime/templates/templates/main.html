@@ -1,0 +1,26 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+</head>
+<body class="gb" >
+    <div class="div1">
+        <img src="../static/img/2.png">
+    </div>
+    <div class="div2">
+        <div class="the"><a href="{% url 'ba' %}"><p>Home</p></a>
+            <a href="{% url 'register' %}"><p>Register</p></a>
+            <a href="{% url 'ab' %}"><p>About Us</p></a>
+        </div>
+        <div class="ang">
+            <div><h1>GREAT THINGS ARE COMMING FOR YOU.</h1></div>
+            <a href="{% url 'ab' %}"><p>Learn More</p></a>
+        </div>
+    </div>
+</body>
+</html>
